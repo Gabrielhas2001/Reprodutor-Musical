@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300;400;500&display=swap');
+
 body, html {
     margin: 0;
     padding: 0;
@@ -8,6 +10,7 @@ body, html {
     height: 100vh;
     background-color: #333;
     color: #ddd;
+    font-family: 'Montserrat', sans-serif;
 }
 
 img {
@@ -59,15 +62,27 @@ progress {
     justify-content: space-between;
 }
 
+.player {
+    width: 350px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+
 .botao-play {
     font-size: 50px;
+    cursor: pointer;
 }
 
 .botao-pause {
     font-size: 50px;
     display: none;
+    cursor: pointer;
 }
 
 .setas {
     font-size: 40px;
+    cursor: pointer;
 }
