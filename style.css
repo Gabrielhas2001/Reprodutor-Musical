@@ -52,3 +52,22 @@ progress {
     border-radius: 50%;
     margin-left: -2px;
 }
+
+.tempo {
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+}
+
+.botao-play {
+    font-size: 50px;
+}
+
+.botao-pause {
+    font-size: 50px;
+    display: none;
+}
+
+.setas {
+    font-size: 40px;
+}
