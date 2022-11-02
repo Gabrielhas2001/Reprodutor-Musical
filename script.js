@@ -24,5 +24,16 @@ function atualizarBarra() {
     let barra = document.querySelector('progress');
     barra.style.width = Math.floor(( musica.currentTime / musica.duration) * 100) + '%';
     let tempoDecorrido = document.querySelector('.inicio');
-    tempoDecorrido.textContent = Math.floor(musica.currentTime);
+    tempoDecorrido.textContent = segundosParaMinutos(Math.floor(musica.currentTime));
+}
+
+function segundosParaMinutos(segundos) {
+    let campoMinutos = Math.floor(segundos/60);
+    let campoSegundos = segundos % 60;
+
+    if (campoSegundos < 10) {
+        campoSegundos = '0' + campoSegundos;
+    }
+
+    return campoMinutos + ':' + campoSegundos;
 }
