@@ -1,4 +1,16 @@
+// Vetores
+
+let musicas = [
+    {titulo: 'Runaway', artista: 'Aurora'
+    ,src: 'musicas/AURORA - Runaway_d_HlPboLRL8.mp3', img: 'imagens/Aurora.jpg'},
+    {titulo: 'Come A Little Close', artista: 'Cage The Elephant'
+    ,src: 'musicas/Cage The Elephant - Come A Little Closer (Official Video)_KVYup3Qwh8Q.mp3', img: 'imagens/Cage.jpg'},
+    {titulo: 'Heaven Knows I Am Miserable Now' , artista: 'The Smiths'
+    ,src: 'musicas/The Smiths.mp3', img: 'imagens/The Smiths.jpg'}
+];
+
 //Variaveis Globais
+
 let musica = document.querySelector('audio');
 let duracaoMusica = document.querySelector('.fim');
 let imagem = document.querySelector('img');
