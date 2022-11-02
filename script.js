@@ -18,8 +18,7 @@ let imagem = document.querySelector('img');
 let nomeMusica = document.querySelector('.descricao h2');
 let nomeArtista = document.querySelector('.descricao i');
 
-//
-duracaoMusica.textContent = segundosParaMinutos(Math.floor(musica.duration));
+renderizarMusica(indexMusica);
 
 // Lista de Eventos do JavaScript
 document.querySelector('.botao-play').addEventListener('click', tocarMusica);
@@ -28,13 +27,17 @@ musica.addEventListener('timeupdate', atualizarBarra);
 musica.addEventListener('loadeddata', duration);
 document.querySelector('.anterior').addEventListener('click', () => {
     indexMusica--;
+    if(indexMusica < 0) {
+        indexMusica = 2;
+    }
     renderizarMusica(indexMusica);
-    
 });
 document.querySelector('.proxima').addEventListener('click', () => {
     indexMusica++;
+    if(indexMusica > 2) {
+        indexMusica = 0;
+    }
     renderizarMusica(indexMusica);
-    
 });
 
 
