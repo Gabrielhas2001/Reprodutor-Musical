@@ -1,6 +1,5 @@
 //Variaveis Globais
 let musica = document.querySelector('audio');
-
 let duracaoMusica = document.querySelector('.fim');
 
 //
