@@ -12,6 +12,7 @@ let musicas = [
 //Variaveis Globais
 
 let musica = document.querySelector('audio');
+let indexMusica = 0; 
 let duracaoMusica = document.querySelector('.fim');
 let imagem = document.querySelector('img');
 let nomeMusica = document.querySelector('.descricao h2');
@@ -26,14 +27,28 @@ document.querySelector('.botao-pause').addEventListener('click', pausarMusica);
 musica.addEventListener('timeupdate', atualizarBarra);
 musica.addEventListener('loadeddata', duration);
 document.querySelector('.anterior').addEventListener('click', () => {
-    renderizarMusica();
+    indexMusica--;
+    renderizarMusica(indexMusica);
+    
 });
 document.querySelector('.proxima').addEventListener('click', () => {
-    renderizarMusica();
+    indexMusica++;
+    renderizarMusica(indexMusica);
+    
 });
 
 
 // Lista de funções
+function renderizarMusica(index) {
+    musica.setAttribute('src', musicas[index].src);
+    musica.addEventListener('loadeddata', () => {
+        nomeMusica.textContent = musicas[index].titulo;
+        nomeArtista.textContent = musicas[index].artista;
+        imagem.src = musicas[index].img;
+        duracaoMusica.textContent = segundosParaMinutos(Math.floor(musica.duration));
+    });
+}
+
 function tocarMusica() {
     musica.play();
     document.querySelector('.botao-pause').style.display = 'block';
@@ -68,3 +83,4 @@ function segundosParaMinutos(segundos) {
 
     return campoMinutos + ':' + campoSegundos;
 }
+
