@@ -25,6 +25,12 @@ document.querySelector('.botao-play').addEventListener('click', tocarMusica);
 document.querySelector('.botao-pause').addEventListener('click', pausarMusica);
 musica.addEventListener('timeupdate', atualizarBarra);
 musica.addEventListener('loadeddata', duration);
+document.querySelector('.anterior').addEventListener('click', () => {
+    renderizarMusica();
+});
+document.querySelector('.proxima').addEventListener('click', () => {
+    renderizarMusica();
+});
 
 
 // Lista de funções
