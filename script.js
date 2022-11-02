@@ -1,6 +1,9 @@
 //Variaveis Globais
 let musica = document.querySelector('audio');
 let duracaoMusica = document.querySelector('.fim');
+let imagem = document.querySelector('img');
+let nomeMusica = document.querySelector('.descricao h2');
+let nomeArtista = document.querySelector('.descricao i');
 
 //
 duracaoMusica.textContent = segundosParaMinutos(Math.floor(musica.duration));
