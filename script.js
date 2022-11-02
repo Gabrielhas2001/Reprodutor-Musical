@@ -1,10 +1,16 @@
-//Variaveis
+//Variaveis Globais
 let musica = document.querySelector('audio');
+
+let duracaoMusica = document.querySelector('.fim');
+
+//
+duracaoMusica.textContent = segundosParaMinutos(Math.floor(musica.duration));
 
 // Lista de Eventos do JavaScript
 document.querySelector('.botao-play').addEventListener('click', tocarMusica);
 document.querySelector('.botao-pause').addEventListener('click', pausarMusica);
 musica.addEventListener('timeupdate', atualizarBarra);
+musica.addEventListener('loadeddata', duration);
 
 
 // Lista de funções
@@ -25,6 +31,11 @@ function atualizarBarra() {
     barra.style.width = Math.floor(( musica.currentTime / musica.duration) * 100) + '%';
     let tempoDecorrido = document.querySelector('.inicio');
     tempoDecorrido.textContent = segundosParaMinutos(Math.floor(musica.currentTime));
+}
+
+function duration() {
+    let duracaoMusica = document.querySelector('.fim');
+    duracaoMusica.textContent = segundosParaMinutos(Math.floor(musica.duration));
 }
 
 function segundosParaMinutos(segundos) {
